@@ -1,5 +1,6 @@
 var Hero = require("./adventure_game.js").Hero;
 var Food = require("./adventure_game.js").Food;
+var Rat = require("./adventure_game.js").Rat;
 var assert =  require("assert");
 
 // A. - Create a constructor to create Hero character. - A Hero has a name - A Hero has health - A Hero has a favourite food - A Hero can talk saying their name
@@ -38,3 +39,14 @@ describe('Food', function(){
     assert.equal(food1.rValue, 5);
   })
 })
+
+// Further. D. - Create a Rat constructor - Rats should be able to touch food, if they do the food become poisonous. - Heroes that eat poisonous food should lose health.
+describe('Rat', function(){
+  it("should be able to touch food, if they do the food become poisonous", function(){
+    var rat1 = new Rat();
+    var food1 = new Food('cucumber', 5);
+    rat1.touch(food1);
+    assert.equal(food1.poisonous, true);
+  })
+})
+

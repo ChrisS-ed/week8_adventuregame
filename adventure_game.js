@@ -30,12 +30,18 @@ var Hero = function(name, favourite_food) {
 
 }
 
-
-
 var Food = function(name, rValue){
   this.name = name;
-  this.rValue = rValue
+  this.rValue = rValue;
+  this.poisonous = false;
+}
+
+var Rat = function(){
+  this.touch = function(food){
+    food.poisonous = true;
+  }
 }
 
 module.exports.Hero = Hero;
 module.exports.Food = Food;
+module.exports.Rat = Rat;
