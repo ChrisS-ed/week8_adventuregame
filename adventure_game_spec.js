@@ -18,7 +18,7 @@ describe('Hero', function(){
   }),
   it('should be able to eat food and health should go up by the replenishment value', function(){
     var hero1 = new Hero('hero1', 'cucumber');
-    var food1 = new Food('cucumber', 5)
+    var food1 = new Food('cheese', 5)
     hero1.eat(food1);
     assert.equal(105, hero1.health);
   })
