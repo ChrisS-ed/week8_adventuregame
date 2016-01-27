@@ -18,6 +18,12 @@ var Hero = function(name, favourite_food) {
     return talkString;
   }
 
+  this.eat = function(foodName) {
+    var eatString ="I have eaten 1 food";
+    this.health += foodName.rValue
+    return eatString;
+  }
+
 }
 
 
