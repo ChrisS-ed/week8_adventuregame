@@ -20,6 +20,12 @@ var Hero = function(name, favourite_food) {
 
 }
 
-module.exports = Hero;
 
-var Food = {}
+
+var Food = function(name, rValue){
+  this.name = name;
+  this.rValue = rValue
+}
+
+module.exports.Hero = Hero;
+module.exports.Food = Food;

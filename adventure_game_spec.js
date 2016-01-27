@@ -1,4 +1,5 @@
-var Hero = require("./adventure_game.js");
+var Hero = require("./adventure_game.js").Hero;
+var Food = require("./adventure_game.js").Food;
 var assert =  require("assert");
 
 // A. - Create a constructor to create Hero character. - A Hero has a name - A Hero has health - A Hero has a favourite food - A Hero can talk saying their name
@@ -15,6 +16,6 @@ describe('Food', function(){
   it("should have a name and a replenishment value", function(){
     var food1 = new Food('cucumber', 5);
     assert.equal(food1.name, "cucumber");
-    assert.equal(food1.replenishment, 5);
+    assert.equal(food1.rValue, 5);
   })
 })
