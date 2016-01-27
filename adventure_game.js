@@ -20,7 +20,10 @@ var Hero = function(name, favourite_food) {
 
   this.eat = function(foodName) {
     var eatString ="I have eaten 1 food";
-    if (foodName.name === this.favourite_food) {
+    if (foodName.poisonous === true) {
+      this.health -= 25;
+    }
+    else if (foodName.name === this.favourite_food) {
       this.health += (foodName.rValue * 1.5) 
     }else{ 
       this.health += foodName.rValue

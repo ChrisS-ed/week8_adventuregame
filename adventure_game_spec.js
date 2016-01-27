@@ -17,17 +17,28 @@ describe('Hero', function(){
     hero1.eat(food1);
     assert.equal("I have eaten 1 food", hero1.eat(food1));
   }),
+  // C. - A hero should be able to eat food, and health should go up by the replenishment value
   it('should be able to eat food and health should go up by the replenishment value', function(){
     var hero1 = new Hero('hero1', 'cucumber');
     var food1 = new Food('cheese', 5)
     hero1.eat(food1);
     assert.equal(105, hero1.health);
-  })
+  }),
+  // C. - A hero should be able to eat food - If the food is their favourite food, their health should go up by 1.5 * value.
   it('should increase health by 1.5 * value if they eat their favourite food', function(){
     var hero1 = new Hero('hero1', 'cucumber');
     var food1 = new Food('cucumber', 5)
     hero1.eat(food1);
     assert.equal(107.5, hero1.health);
+  }),
+  // Further. D. - Heroes that eat poisonous food should lose health.
+  it('should lose 25 health if they eat poisonous food', function(){
+    var hero1 = new Hero('hero1', 'cucumber');
+    var food1 = new Food('cheese', 5);
+    var rat1 = new Rat();
+    rat1.touch(food1);
+    hero1.eat(food1);
+    assert.equal(75, hero1.health);
   })
 })
 
@@ -40,7 +51,7 @@ describe('Food', function(){
   })
 })
 
-// Further. D. - Create a Rat constructor - Rats should be able to touch food, if they do the food become poisonous. - Heroes that eat poisonous food should lose health.
+// Further. D. - Create a Rat constructor - Rats should be able to touch food, if they do the food become poisonous.
 describe('Rat', function(){
   it("should be able to touch food, if they do the food become poisonous", function(){
     var rat1 = new Rat();
